@@ -33,12 +33,17 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
         if(eText1.equals(" ")  || eText2.equals(" ")){
             showAlertDialog()
         }else {
-            //入力値がある場合、計算を行う
+            //入力値がある場合、数値をMain2Activity.ktに渡す
+//            val editText1 = eText1.toDouble()
+//            val editText2 = eText2.toDouble()
+
             val editText1 = eText1.toDouble()
             val editText2 = eText2.toDouble()
 
             intent.putExtra("VALUE1", editText1)
             intent.putExtra("VALUE2", editText2)
+
+            //押下された四則計算ボタンより、Main2Activity.ktに渡す値を分岐する
             if (v.id == R.id.button1) {
                 intent.putExtra("OPERATION", 1)
             } else if (v.id == R.id.button2) {
@@ -48,6 +53,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
             }  else if (v.id == R.id.button4) {
                 intent.putExtra("OPERATION", 4)
             }
+
             startActivity(intent)
         }
     }

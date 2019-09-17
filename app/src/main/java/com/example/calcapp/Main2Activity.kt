@@ -13,8 +13,9 @@ class Main2Activity : AppCompatActivity() {
 
         val value1 = intent.getDoubleExtra("VALUE1", 0.0)
         val value2 = intent.getDoubleExtra("VALUE2", 0.0)
-        var operation = intent.getIntExtra("OPERATION", 0)
+        val operation = intent.getIntExtra("OPERATION", 0)
 
+        //四則計算のボタンごとに、処理を分岐する
         if (operation == 1) {
             textView.text = "${value1 + value2}"
         } else if (operation == 2) {
